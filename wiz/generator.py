@@ -27,5 +27,5 @@ class DirectoryGenerator(BaseGenerator):  # pylint: disable=too-few-public-metho
             os.mkdir(self.project_name)
             sys.exit(1)
         else:
-            print(f'{self.project_name} project already exists')
+            print('The {} project already exists'.format(self.project_name))
             sys.exit(1)
