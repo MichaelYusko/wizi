@@ -19,7 +19,7 @@ class DirectoryGenerator(BaseGenerator):  # pylint: disable=too-few-public-metho
     def __init__(self, project_name):  # pylint: disable=useless-super-delegation
         super().__init__(project_name)
 
-    def _create_directory(self):
+    def create(self):
         """
         :return: Create an directory
         """
@@ -29,3 +29,10 @@ class DirectoryGenerator(BaseGenerator):  # pylint: disable=too-few-public-metho
         else:
             print('The {} project already exists'.format(self.project_name))
             sys.exit(1)
+
+
+class WiziGenerator:
+    """Main class for generate flow"""
+    def __init__(self, project_name):
+        self.directory = DirectoryGenerator(project_name)
+        self.file = FileGenerator(project_name)
