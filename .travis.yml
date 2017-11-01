@@ -1,0 +1,15 @@
+language: python
+cache:
+  - pip
+python:
+  - 3.5
+  - 3.6
+env:
+  global:
+    - PYTHONPATH="/home/travis/build/MichaelYusko/wizi"
+install:
+  - pip install -U setuptools
+  - pip install -r requirements-dev.txt
+script:
+  - flake8 . --max-line-length=100
+  - isort
