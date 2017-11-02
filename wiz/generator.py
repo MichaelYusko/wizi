@@ -31,7 +31,7 @@ class FileGenerator(BaseGenerator):
     _default_files = [
         'requirements.txt', '.travis.yml',
         'setup.py', 'tox.ini', 'LICENSE',
-        'README.md'
+        'README.md', '.gitignore'
     ]
 
     def create(self):
