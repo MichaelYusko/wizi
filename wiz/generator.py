@@ -14,10 +14,10 @@ class BaseGenerator:
         """Abstract method for all child classes"""
         pass
 
-    def make_path(self, file_name):
+    def _make_path(self, file_name):
         """
-        :param file_name:
-        :return:
+        :param file_name: An file name
+        :return: Path where, files would be saved
         """
         path = os.getcwd()
         return '{}/{}/{}'.format(path, self.project_name, file_name)
@@ -28,14 +28,18 @@ class FileGenerator(BaseGenerator):
     def __init__(self, project_name):  # pylint: disable=useless-super-delegation
         super().__init__(project_name)
 
+    _default_files = [
+        'requirements.txt', '.travis.yml',
+        'setup.py', 'tox.ini', 'LICENSE',
+        'README.md', '.gitignore'
+    ]
+
     def create(self):
         """
         Create an files,in the root directory of project
         """
-        files = ['requirements.txt', '.travis.yml', 'setup.py', 'tox.ini',\
-                'README.md', '.gitignore']
-        for file_name in files:
-            with open(self.make_path(file_name), 'w') as file:
+        for file_name in self._default_files:
+            with open(self._make_path(file_name), 'w') as file:
                 file.write('# Wizi project')
 
 
