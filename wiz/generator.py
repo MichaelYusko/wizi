@@ -32,7 +32,8 @@ class FileGenerator(BaseGenerator):
         """
         Create an files,in the root directory of project
         """
-        files = ['requirements.txt', '.travis.yml', 'setup.py', 'tox.ini']
+        files = ['requirements.txt', '.travis.yml', 'setup.py', 'tox.ini',\
+                'README.md', '.gitignore']
         for file_name in files:
             with open(self.make_path(file_name), 'w') as file:
                 file.write('# Wizi project')
