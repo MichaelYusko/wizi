@@ -16,8 +16,8 @@ class BaseGenerator:
 
     def make_path(self, file_name):
         """
-        :param file_name:
-        :return:
+        :param file_name: An file name
+        :return: Path where, files would be saved
         """
         path = os.getcwd()
         return '{}/{}/{}'.format(path, self.project_name, file_name)
