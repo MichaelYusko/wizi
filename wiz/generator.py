@@ -4,7 +4,7 @@ import os
 import sys
 
 
-class BaseGenerator:
+class BaseGenerator:  # pylint: disable=too-few-public-methods
     """Base generator class"""
     def __init__(self, project_name):
         self.project_name = project_name
@@ -23,7 +23,7 @@ class BaseGenerator:
         return '{}/{}/{}'.format(path, self.project_name, file_name)
 
 
-class FileGenerator(BaseGenerator):
+class FileGenerator(BaseGenerator):  # pylint: disable=too-few-public-methods
     """Generator class for an file"""
     def __init__(self, project_name):  # pylint: disable=useless-super-delegation
         super().__init__(project_name)
@@ -43,7 +43,7 @@ class FileGenerator(BaseGenerator):
                 file.write('# Wizi project')
 
 
-class DirectoryGenerator(BaseGenerator):
+class DirectoryGenerator(BaseGenerator):  # pylint: disable=too-few-public-methods
     """Generator class for an directory"""
     def __init__(self, project_name):  # pylint: disable=useless-super-delegation
         super().__init__(project_name)
