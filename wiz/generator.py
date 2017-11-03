@@ -37,7 +37,6 @@ class FileGenerator(BaseGenerator):  # pylint: disable=too-few-public-methods
         """
         Create an files,in the root directory of project
         """
-        print('lol')
         for file_name in self._default_files:
             with open(self._make_path(file_name), 'w') as file:
                 file.write('# Wizi project')
