@@ -87,3 +87,6 @@ ENV/
 
 # Ignore idea files
 .idea
+
+# Other stuff
+MANIFEST
