@@ -11,7 +11,3 @@ def create(name):
     wizi = Wizi(name)
     wizi.create_project()
     click.echo('%s was created.' % name)
-
-
-if __name__ == '__main__':
-    create()
