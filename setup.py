@@ -31,4 +31,3 @@ setup(**setup_kwargs)
 
 print(u"\n\n\t\t    "
       "Wizi version {} installation succeeded.\n".format(VERSION))
-
