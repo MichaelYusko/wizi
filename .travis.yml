@@ -7,9 +7,12 @@ python:
 env:
   global:
     - PYTHONPATH="/home/travis/build/MichaelYusko/wizi"
+  matrix:
+     - TOXENV=py
 install:
   - pip install -U setuptools
   - pip install -r requirements-dev.txt
 script:
   - flake8 . --max-line-length=100
   - isort
+  - tox
