@@ -1,6 +1,7 @@
 """Base generator file"""
 import abc
 import os
+from .helpers import write_license_file
 
 
 class BaseGenerator:  # pylint: disable=too-few-public-methods
@@ -33,13 +34,18 @@ class FileGenerator(BaseGenerator):  # pylint: disable=too-few-public-methods
         'README.md', '.gitignore'
     ]
 
-    def create(self):
+    def create_files(self, license_type, author_name):
         """
         Create an files,in the root directory of project
+        and write License context, with an author name
         """
         for file_name in self._default_files:
             with open(self._make_path(file_name), 'w') as file:
                 file.write('# Wizi project')
+
+        with open(self._make_path('LICENSE'), 'w') as file:
+            write_license = write_license_file(license_type, author_name)
+            file.write(write_license)
 
 
 class DirectoryGenerator(BaseGenerator):  # pylint: disable=too-few-public-methods
@@ -61,7 +67,7 @@ class WiziGenerator:  # pylint: disable=too-few-public-methods
         self.directory = DirectoryGenerator(project_name)
         self.files = FileGenerator(project_name)
 
-    def create_project(self):
+    def create_project(self, license_type, author_name):
         """Start an project"""
         self.directory.create()
-        self.files.create()
+        self.files.create_files(license_type, author_name)
