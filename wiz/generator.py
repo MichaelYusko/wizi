@@ -1,6 +1,7 @@
 """Base generator file"""
 import abc
 import os
+
 from .helpers import write_license_file
 
 
