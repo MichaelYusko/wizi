@@ -8,7 +8,7 @@ from wiz.generator import WiziGenerator as Wizi
               help='Create an project based on name.')
 @click.option('-a', '--author', prompt='Enter author name',
               help='An author name')
-@click.option('-lt', '--license_type', prompt='Type of license',
+@click.option('-lt', '--license_type', prompt='Type of license [MIT, BSD]',
               help='Type of license')
 def create(name, author, license_type):
     """Generate an project"""
