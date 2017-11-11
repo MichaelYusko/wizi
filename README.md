@@ -37,7 +37,6 @@ my_first_project
 └── tox.ini
 ```
 
-and tree would be such as
 Contribution
 =================================
 1. Fork the repository
