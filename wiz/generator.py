@@ -1,6 +1,7 @@
 """Base generator file"""
 import abc
 import os
+import sys
 
 from .helpers import write_license_file
 
@@ -56,10 +57,11 @@ class DirectoryGenerator(BaseGenerator):  # pylint: disable=too-few-public-metho
 
     def create(self):
         """Create an directory"""
-        if not os.path.isdir(self.project_name):
-            os.mkdir(self.project_name)
-        else:
+        if os.path.isdir(self.project_name):
             print('The {} project already exists'.format(self.project_name))
+            sys.exit(1)
+        else:
+            os.mkdir(self.project_name)
 
 
 class WiziGenerator:  # pylint: disable=too-few-public-methods
