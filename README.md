@@ -28,13 +28,14 @@ And wizi will create for you tree of project, and added most used files.
 
 Example of tree
 ===============
+```
 my_first_project
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
 ├── setup.py
 └── tox.ini
-
+```
 
 and tree would be such as
 Contribution
