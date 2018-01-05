@@ -21,10 +21,13 @@ python3 -m wiz
 ```
 OR
 ```
-python3 -m wiz -a 'Mike Yusko' -n my_first_project -lt MIT
+python3 -m wiz -a "Mike Yusko" -n my_first_project -lt MIT
 ```
 Where **-a** is an author name, **-n** name of project, and **-lt** type of license.
 And wizi will create for you tree of project, and added most used files.
+
+> NOTE: If you are on Windows, enclose your name in double-quotes if you are entering
+your first and last name.
 
 Example of tree
 ===============
